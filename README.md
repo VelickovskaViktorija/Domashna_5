@@ -1,3 +1,8 @@
+price_prediction.png = > се добива од Data Analysis Service.
+
+http://localhost:5000/  = > Data Visualization Service
+
+
 # Domashna_5
 
 Домашна бр. 5
