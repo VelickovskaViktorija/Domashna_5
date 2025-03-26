@@ -5,15 +5,15 @@ import psycopg2
 import json
 from kafka import KafkaConsumer
 
-# Kafka consumer setup
+
 consumer = KafkaConsumer(
-    'stock_data',  # Името на topic-от
-    bootstrap_servers='kafka:9092',  # Адреса на Kafka брокерот
-    auto_offset_reset='earliest',  # Почни од почеток на topic-от
-    value_deserializer=lambda v: json.loads(v.decode('utf-8'))  # Декодирај ги пораките како JSON
+    'stock_data',  
+    bootstrap_servers='kafka:9092',  
+    auto_offset_reset='earliest',  
+    value_deserializer=lambda v: json.loads(v.decode('utf-8'))  
 )
 
-# Cassandra connection setup
+
 def connect_to_cassandra():
     cluster = Cluster(['cassandra'], port=9042)
     session = cluster.connect()
@@ -36,7 +36,7 @@ def connect_to_cassandra():
     """)
     return session
 
-# PostgreSQL connection setup
+
 def connect_to_postgres():
     conn = psycopg2.connect(
         dbname="stock_data",
@@ -61,7 +61,7 @@ def connect_to_postgres():
     conn.commit()
     return conn, cur
 
-# Читај ги пораките од Kafka и складирај ги во Cassandra и PostgreSQL
+
 def store_data():
     cassandra_session = connect_to_cassandra()
     postgres_conn, postgres_cur = connect_to_postgres()
