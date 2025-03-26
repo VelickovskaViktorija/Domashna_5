@@ -2,7 +2,7 @@ price_prediction.png = > се добива од Data Analysis Service.
 
 http://localhost:5000/  = > Data Visualization Service,  raboti koga se vkluceni services
 
-*warning => mozni se 'outdated' ceni poradi API KEY-ot, ne mozev da zemam nov for free...
+*warning => mozni se 'outdated' ceni poradi API KEY-ot, ne mozev da zemam nov key for free...
 
 # Domashna_5
 
