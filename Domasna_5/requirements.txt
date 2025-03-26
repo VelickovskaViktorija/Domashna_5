@@ -1,0 +1,11 @@
+requests==2.32.3
+kafka-python==2.0.6
+pyspark==3.5.0
+cassandra-driver==3.29.2
+psycopg2-binary==2.9.10
+pandas==2.2.3
+numpy==1.26.4
+plotly==6.0.0
+scikit-learn==1.4.0
+matplotlib==3.8.0
+Flask==3.0.0
