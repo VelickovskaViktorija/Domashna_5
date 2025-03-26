@@ -8,13 +8,13 @@ from kafka import KafkaProducer
 # Alpha Vantage API key
 API_KEY = '9ZGQ97ICWQWEUW63'
 
-# Патека до кеш датотеката
+
 CACHE_FILE = 'stock_data_cache.json'
 
-# Конфигурирај го логирањето
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Kafka producer setup
+
 def create_kafka_producer():
     retries = 5
     while retries > 0:
@@ -27,7 +27,7 @@ def create_kafka_producer():
         except Exception as e:
             logging.error(f"Failed to connect to Kafka: {e}. Retrying in 5 minutes...")
             retries -= 1
-            time.sleep(300)  # Чекај 5 минути пред повторен обид
+            time.sleep(300)  
     raise Exception("Could not connect to Kafka after multiple retries.")
 
 producer = create_kafka_producer()
@@ -37,7 +37,7 @@ def fetch_stock_data(symbol):
     response = requests.get(url)
     data = response.json()
 
-    # Проверка за грешки од API-то
+    
     if "Information" in data and "rate limit" in data["Information"]:
         logging.warning(f"Достигнавте дневна граница на API повици за {symbol}. Ве молиме надградете на премиум план или почекајте до утре.")
         return None
@@ -49,7 +49,7 @@ def fetch_stock_data(symbol):
 
 def send_to_kafka(topic, data):
     try:
-        # Печатење на податоците пред испраќање до Kafka
+        
         print("Sending data to Kafka:")
         print(json.dumps(data, indent=4))  # Печатење на податоците во уреден формат
         producer.send(topic, value=data)
@@ -89,4 +89,4 @@ if __name__ == "__main__":
 
             if stock_data:
                 send_to_kafka(topic, stock_data)
-        time.sleep(3600)  # Чекај 1 час пред следниот циклус
+        time.sleep(3600)  
