@@ -4,6 +4,27 @@ http://localhost:5000/  = > Data Visualization Service,  raboti koga se vkluceni
 
 *warning => mozni se 'outdated' ceni poradi API KEY-ot, ne mozev da zemam nov key for free...
 
+*gi nemam hostirano, bidejkji ne mozev for free na nitu edna platforma, probav na nekolku platformi kako: Microsoft Azure, AWS , Render i drugi, 
+no bara da se koristi platena verzija za celosno hostiranje.
+
+objasnuvanje okolu videata za podobro snaogjanje:
+
+Video za rabotata na servisite PART I.mp4
+Video za rabotata na servisite PART II.mp4       => service 1 i service 2
+
+cassandra data_storage.zip  
+PostgreSQL data_storage.zip                      => data storage service
+
+video data_visualization PART I.mp4
+video data_visualization PART II.mp4             => data visualization service
+
+price_prediction.png                             = > се добива од Data Analysis Service
+
+domasna_5 - App - Docker Desktop 2025-03-27 00-02-51.mp4            => snimka od Docker
+
+*dokolku e potrebno mozam da snimam edno celosno video, i da go ispratam po mail dokolku ovie ne se dovolno jasni i pregledni.
+
+
 # Domashna_5
 
 Домашна бр. 5
